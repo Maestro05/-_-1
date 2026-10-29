@@ -1,0 +1,39 @@
+﻿<Window x:Class="КГ__1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:КГ__1"
+        mc:Ignorable="d"
+        Title="ЛР №1: Аффинные преобразования 3D (Буква Н - WPF) | Двойной клик — Анимация" 
+        Height="600" Width="800"
+        Background="#1E1E23"
+        KeyDown="Window_KeyDown"
+        MouseDown="Window_MouseDown"
+        MouseMove="Window_MouseMove"
+        MouseUp="Window_MouseUp"
+        MouseWheel="Window_MouseWheel">
+    <Grid>
+        <!-- Холст для рисования ребер 3D-модели -->
+        <Canvas x:Name="MainCanvas" ClipToBounds="True"/>
+
+        <!-- Панель управления / Подсказка -->
+        <Border Background="#CC111115" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Padding="10" CornerRadius="5">
+            <TextBlock Foreground="White" FontSize="12" FontFamily="Consolas">
+                <Run Text="Управление:" FontWeight="Bold"/><LineBreak/>
+                <Run Text="• Зажатая ЛКМ + Мышь: Поворот (Rx, Ry)"/><LineBreak/>
+                <Run Text="• Зажатая ПКМ + Мышь: Смещение (XY)"/><LineBreak/>
+                <Run Text="• Колесо мыши: Масштабирование"/><LineBreak/>
+                <Run Text="• Стрелки на клавиатуре: Поворот"/><LineBreak/>
+                <Run Text="• Двойной клик ЛКМ: Анимация с замедлением"/>
+            </TextBlock>
+        </Border>
+
+        <!-- Табло координат и параметров (Справа) -->
+        <Border Background="#CC111115" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Padding="10" CornerRadius="5">
+            <TextBlock x:Name="TxtInfo" Foreground="#00FFCC" FontSize="12" FontFamily="Consolas">
+                <!-- Обновляется динамически -->
+            </TextBlock>
+        </Border>
+    </Grid>
+</Window>
